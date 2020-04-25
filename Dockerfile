@@ -7,7 +7,7 @@ RUN git clone https://github.com/sharkdp/bat.git /tmp/bat
 
 WORKDIR /tmp/bat
 
-RUN git checkout tags/$(git describe --tags $(git rev-list --tags --max-count=1)) -b latest
+RUN git checkout tags/$(git describe --tags $(git rev-list --tags --max-count=1))
 
 RUN RUSTFLAGS='-C link-arg=-s' cargo install bat
 
