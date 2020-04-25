@@ -16,6 +16,9 @@ clean:
 	docker rmi -f bat
 	docker rmi -f rust
 
+install: build copy
+	sudo cp ./bat $$(which bat)
+
 check:
 	-git clone https://github.com/sharkdp/bat.git /tmp/bat
 	-git --git-dir=/tmp/bat/.git pull
